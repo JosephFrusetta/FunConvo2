@@ -5,7 +5,6 @@ from twilio.rest import Client
 import openai
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'q3cfe1ed8fae309f222'
 
 # Set your Twilio Account SID and Auth Token as environment variables
 account_sid = os.environ['TWILIO_ACCOUNT_SID']
@@ -25,10 +24,10 @@ def sms_reply(role="user"):
     # Get the incoming SMS message / # Add the user input to the chat history
     message_history.append({"role": role, "content": request.form.get('Body', '')})   
 
-    # Generate a response using GPT-4 API
+    # Generate a response using GPT-3.5 API
     completion = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
-        messages=message_history # Use the chat history as input
+        messages=message_history # Use the message history as input
     )
 
     # Extract the generated text
