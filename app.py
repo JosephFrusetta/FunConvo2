@@ -5,6 +5,7 @@ from twilio.rest import Client
 import openai
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'q3cfe1ed8fae309f222'
 
 # Set your Twilio Account SID and Auth Token as environment variables
 account_sid = os.environ['TWILIO_ACCOUNT_SID']
@@ -46,4 +47,4 @@ def sms_reply(role="user"):
     return str(twilio_response)
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
