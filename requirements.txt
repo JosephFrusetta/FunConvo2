@@ -19,7 +19,7 @@ Jinja2==3.1.2
 MarkupSafe==2.1.1
 multidict==6.0.4
 ngrok==0.2.3
-numpy==1.24.2
+numpy==1.21.6
 nvdiffrast==0.3.0
 openai==0.27.2
 openpyxl==3.0.10
