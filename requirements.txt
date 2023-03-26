@@ -20,7 +20,6 @@ MarkupSafe==2.1.1
 multidict==6.0.4
 ngrok==0.2.3
 numpy==1.21.6
-nvdiffrast==0.3.0
 openai==0.27.2
 openpyxl==3.0.10
 pandas==1.4.3
