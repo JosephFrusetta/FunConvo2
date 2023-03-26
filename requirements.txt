@@ -23,7 +23,7 @@ numpy==1.21.6
 openai==0.27.2
 openpyxl==3.0.10
 pandas==1.3.5
-pandas-stubs==1.4.3.220815
+pandas-stubs==1.2.0.62
 platformdirs==2.5.2
 playwright==1.28.0
 pyee==9.0.4
