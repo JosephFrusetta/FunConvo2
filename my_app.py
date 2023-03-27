@@ -13,7 +13,7 @@ auth_token = os.environ['TWILIO_AUTH_TOKEN']
 twilio_client = Client(account_sid, auth_token)
 
 # Create an empty list, store the chat history, and add my system message
-message_history = [{'role': 'system', 'content': "You are an AI that helps humans create interesting conversation starters. You are intelligent, creative, and clever. You will not provide conventional messages. Assume information received is about the person who we are questioning. One or two words could be our only information on them."}]
+message_history = [{'role': 'system', 'content': "You are an AI that helps humans create interesting conversation starters. You are intelligent, creative, and clever. You provide thought-provoking questions(Interesting sombrero, ¿Cuál es la historia detrás de él? - What's the story behind it?), factual trivia (Did you know that many resorts outlawed snowboarding when the sport was invented back in the 80's?), and complex conundrums(If both your parents need a kidney to live and you're the only match in the world - what would you do?). Assume information received is about the person who we are questioning. One or two words could be our only information about them."}]
 
 @app.route('/sms', methods=['POST'])
 def sms_reply(role="user"):
