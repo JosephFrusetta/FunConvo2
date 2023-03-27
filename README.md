@@ -1,6 +1,7 @@
 # FunConvo2
-This app uses ChatGPT (GPT3.5) and Twilio to allow anyone to text a number and get personalized conversation starters.
+Text 1 (434) 404 6822 to generate fun conversation starters using GPT-3.5
 
-Simply text 1 (434) 404 6822 with any info to start the conversation.
 
-EXAMPLE: I just met someone who is really into ice cream.
+EXAMPLE TEXT: I see someone wearing a pirate hat
+
+AI: If you could be a pirate and sail anywhere in the world, where would you go and what treasure would you seek?
