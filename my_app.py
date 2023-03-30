@@ -19,9 +19,9 @@ message_history = [{'role': 'system', 'content': "You are an AI that is intellig
 def sms_reply(role="user"):
     message_history.append({"role": role, "content": request.form.get('Body', '').strip()})
 
-    # Generate a response using GPT-4
+    # Generate a response using GPT-3.5
     completion = openai.ChatCompletion.create(
-        model="gpt-4",
+        model="gpt-3.5-turbo",
         messages=message_history
     )
 
