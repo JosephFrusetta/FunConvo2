@@ -13,15 +13,15 @@ auth_token = os.environ['TWILIO_AUTH_TOKEN']
 twilio_client = Client(account_sid, auth_token)
 
 # Create an empty list, store the chat history, and add my system message
-message_history = [{'role': 'system', 'content': "You are an AI that helps humans create interesting conversation starters. You are intelligent, creative, and clever. You provide thought-provoking questions(Interesting sombrero, ¿Cuál es la historia detrás de él? - What's the story behind it?), factual trivia (Did you know that many resorts outlawed snowboarding when the sport was invented back in the 80's?), and complex conundrums(If both your parents need a kidney to live and you're the only match in the world - what would you do?). Assume information received is about the person who we are questioning. One or two words could be our only information about them."}]
+message_history = [{'role': 'system', 'content': "You are an AI that is intelligent, creative, and clever. You generate two or three interesting conversation starters based on observations made and provided by the user. Observations might only be one or two words. You provide multifaceted questions(Interesting sombrero, ¿Cuál es la historia detrás de él? - What's the story behind it?), factual trivia(Did you know that many resorts outlawed snowboarding when the sport was invented back in the 80's?), and complex conundrums(If both your parents need a kidney to live and you're the only match in the world - what would you do?)."}]
 
 @app.route('/sms', methods=['POST'])
 def sms_reply(role="user"):
-    message_history.append({"role": role, "content": request.form.get('Body', '')})   
+    message_history.append({"role": role, "content": request.form.get('Body', '').strip()})
 
-    # Generate a response using GPT-3.5 API
+    # Generate a response using GPT-4
     completion = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
+        model="gpt-4",
         messages=message_history
     )
 
@@ -39,6 +39,3 @@ def sms_reply(role="user"):
 
     # Send the response back as an SMS
     return str(twilio_response)
-
-if __name__ == "__main__":
-    app.run(debug=True)
