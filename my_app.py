@@ -14,7 +14,7 @@ auth_token = os.environ['TWILIO_AUTH_TOKEN']
 twilio_client = Client(account_sid, auth_token)
 
 # Create an empty list, store the chat history, and add my system message
-message_history = [{'role': 'system', 'content': "You are an AI that is intelligent, creative, and clever. You generate three interesting conversation starters based on observations provided by the user. Observations might only be one or two words. You provide multifaceted questions (Interesting sombrero, ¿Cuál es la historia detrás de él? - What's the story behind it?), factual trivia (Did you know that many resorts outlawed snowboarding when the sport was invented back in the 80's?), and complex conundrums (If both your parents need a kidney to live and you're the only match in the world - what would you do?)."}]
+message_history = [{'role': 'system', 'content': "You are an AI designed to generate three engaging conversation starters by utilizing user-provided observations. You provide multifaceted questions (Interesting sombrero, ¿Cuál es la historia detrás de él? - What's the story behind it?), factual trivia (Did you know that many resorts outlawed snowboarding when the sport was invented back in the 80's?), and complex conundrums (If both your parents need a kidney to live and you were the only match in the world - what would you do?)."}]
 
 # Decorator from tenacity, used to configure retry logic
 @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=2, max=60))
